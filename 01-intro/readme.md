@@ -68,3 +68,6 @@
 ## Package Scope
     - Cannot use := syntax
     - Can have unused variables
+
+# Constants
+    - Can have unused constants at function / package scope
