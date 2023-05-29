@@ -30,19 +30,4 @@ func main() {
 	}
 	var q, r = divide(100, 7)
 	fmt.Printf("divide(100,7), quotient = %d and remainder = %d\n", q, r)
-
-	/*
-		//anonymous version of 'greet'
-
-
-		//anonymous version of "getGreetMsg"
-
-
-		//anonymous version of 'divide'
-		var q, r = func(x, y int) (quotient, remainder int) {
-			quotient, remainder = x/y, x%y
-			return
-		}(100, 7)
-		fmt.Printf("divide(100,7), quotient = %d and remainder = %d\n", q, r)
-	*/
 }
