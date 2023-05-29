@@ -37,6 +37,7 @@
         - No operator overloading
     - Close to hardware
         - Go applications are compiled to machine code
+        - Go tooling system supports cross compilation
         - Smaller footprint on resources at runtime
     - Concurrency Model
         - Concurrent operations are represented as goroutines (cheap - ~4kb/goroutine)
