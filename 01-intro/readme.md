@@ -41,3 +41,30 @@
     ex:
     GOOS=windows GOARCH=386 go build 01-intro.go
 ```
+# Data Types
+- bool
+- string
+- int
+- int8
+- int16
+- int32
+- int64
+- uint
+- uint8
+- uint16
+- uint32
+- uint64
+- float32
+- float64
+- complex64 ( real [float32] + imaginary [float32] )
+- complex126 ( real [float64] + imaginary [float64] )
+- byte (alias for uint8)
+- rune (alias for int32) (unicode code point)
+
+# Variable Declarations
+## Function Scope
+    - Can use := syntax
+    - Cannot have unused variables
+## Package Scope
+    - Cannot use := syntax
+    - Can have unused variables
