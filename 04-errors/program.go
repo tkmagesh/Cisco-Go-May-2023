@@ -19,6 +19,8 @@ func main() {
 		return
 	}
 	fmt.Printf("divide(100,%d), quotient = %d and remainder = %d\n", divisor, q, r)
+
+	fn()
 }
 
 /*
@@ -45,4 +47,8 @@ func divide(x, y int) (quotient, remainder int, err error) {
 	}
 	quotient, remainder = x/y, x%y
 	return
+}
+
+func fn() {
+
 }
