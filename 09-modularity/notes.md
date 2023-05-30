@@ -1,4 +1,5 @@
 # Modules & Packages
+![image Modules & Packages](./modules-packages.png)
 
 ## Modules
 - Any code that is versioned and distributed together
