@@ -53,6 +53,11 @@ func main() {
 	fmt.Println("before sorting, nos =", nos)
 	sort(nos)
 	fmt.Println("after sorting, nos =", nos)
+
+	fmt.Println("Slicing")
+	fmt.Println("nos[2:5] =", nos[2:5])
+	fmt.Println("nos[:5] =", nos[:5])
+	fmt.Println("nos[5:] =", nos[5:])
 }
 
 func sort(x []int) {
