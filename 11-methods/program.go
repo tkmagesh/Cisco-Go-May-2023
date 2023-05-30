@@ -26,30 +26,35 @@ type PersihableProduct struct {
 */
 
 //For Product
-func toString(p Product) string {
+func (p Product) toString() string {
 	return fmt.Sprintf("Id = %d, Name = %q, Cost = %0.2f", p.Id, p.Name, p.Cost)
 }
 
-func applyDiscount(p *Product, discount float32) {
+func (p *Product) applyDiscount(discount float32) {
 	p.Cost = p.Cost * ((100 - discount) / 100)
 }
 
 //For PerishableProduct
-func toPPString(pp PersihableProduct) string {
-	return fmt.Sprintf("%s, Expiry = %q", toString(pp.Product), pp.Expiry)
+func (pp PersihableProduct) toString() string {
+	return fmt.Sprintf("%s, Expiry = %q", pp.Product.toString(), pp.Expiry)
 }
 
 func main() {
 	// Product
-	pen := Product{
+	pen := &Product{
 		Id:   100,
 		Name: "Pen",
 		Cost: 10,
 	}
-	fmt.Println(toString(pen))
+	// fmt.Println(toString(pen))
+	fmt.Println(pen.toString())
 	fmt.Println("After applying discount")
-	applyDiscount(&pen, 10)
-	fmt.Println(toString(pen))
+	// applyDiscount(&pen, 10)
+	// (&pen).applyDiscount(10)
+	pen.applyDiscount(10)
+
+	// fmt.Println(toString(pen))
+	fmt.Println(pen.toString())
 
 	//PerishableProduct
 	grapes := PersihableProduct{
@@ -60,8 +65,9 @@ func main() {
 		},
 		Expiry: "2 Days",
 	}
-	fmt.Println(toPPString(grapes))
+	fmt.Println(grapes.toString())
 	fmt.Println("After applying discount")
-	applyDiscount(&(grapes.Product), 10)
-	fmt.Println(toPPString(grapes))
+	// applyDiscount(&(grapes.Product), 10)
+	grapes.applyDiscount(10) // applyDiscount inherited from the Product (composed in PerishableProduct)
+	fmt.Println(grapes.toString())
 }
