@@ -20,7 +20,8 @@ func main() {
 	fmt.Println("After incrementing, x =", x)
 
 	n1, n2 := 100, 200
-	swap( /*  */ )
+	swap(&n1, &n2)
+	fmt.Println(n1, n2)
 
 }
 
@@ -28,6 +29,6 @@ func increment(val *int) {
 	*val++
 }
 
-func swap( /*  */ ) /* do NOT return anything */ {
-
+func swap(x, y *int) /* do NOT return anything */ {
+	*x, *y = *y, *x
 }
