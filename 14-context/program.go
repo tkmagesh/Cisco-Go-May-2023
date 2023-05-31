@@ -21,7 +21,7 @@ func main() {
 }
 
 func genFib(ctx context.Context) chan int {
-	fmt.Println("context value :", ctx.Value("key-1"))
+	fmt.Println("context value (genFib):", ctx.Value("key-1"))
 
 	ch := make(chan int)
 	go func() {
@@ -48,6 +48,7 @@ func genFib(ctx context.Context) chan int {
 }
 
 func genNos(ctx context.Context) {
+	fmt.Println("context value (genNos):", ctx.Value("key-1"))
 	counter := 1
 LOOP:
 	for {
